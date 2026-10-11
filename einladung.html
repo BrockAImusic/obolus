@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Obolus – Einladung</title>
+<style>
+  :root { color-scheme: light dark; --grund:#f3f4fa; --karte:#fff; --tinte:#141833; --leise:#5b6180; --akzent:#3446c2; --flaeche:#3446c2; }
+  @media (prefers-color-scheme: dark) { :root { --grund:#0b0d1a; --karte:#161a2e; --tinte:#e9ebf7; --leise:#9ea4c4; --akzent:#9aa8ff; --flaeche:#4255d6; } }
+  body { margin:0; background:var(--grund); color:var(--tinte); font:17px/1.55 -apple-system, system-ui, sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:32px 20px 64px; }
+  h1 { font-size:30px; margin:0 0 6px; } h2 { font-size:20px; margin:0 0 6px; }
+  section { background:var(--karte); border-radius:14px; padding:18px 20px; margin:14px 0; }
+  a { color:var(--akzent); } .leise { color:var(--leise); }
+  .knopf { display:block; text-align:center; text-decoration:none; font-weight:600; padding:15px; border-radius:14px; margin:10px 0; }
+  .haupt { background:var(--flaeche); color:#fff; } .neben { background:var(--karte); color:var(--akzent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Einladung zu Obolus</h1>
+  <p class="leise" id="gruppe">Du wurdest in eine Gruppe eingeladen.</p>
+  <section>
+    <h2>Schon installiert?</h2>
+    <p>Dann öffnet sich die Gruppe direkt in Obolus.</p>
+    <a class="knopf haupt" id="oeffnen" href="#">In Obolus öffnen</a>
+  </section>
+  <section>
+    <h2>Noch nicht installiert?</h2>
+    <p>Obolus ist gratis – für iPhone und Android. Nach der Installation diesen Link noch einmal öffnen.</p>
+    <a class="knopf neben" href="https://apps.apple.com/app/id6818741054">Für iPhone und iPad (App Store)</a>
+    <a class="knopf neben" href="https://play.google.com/store/apps/details?id=de.brockdesign.obolus">Für Android (Google Play)</a>
+  </section>
+  <p class="leise">Obolus teilt gemeinsame Ausgaben fair auf. Ein Konto brauchst du nicht. ·
+    <a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></p>
+</main>
+<script>
+  // #g=<Gruppe>&s=<Schlüssel>&n=<Name> → obolus://beitreten?… (der Teil hinter # geht nie an einen Server)
+  var teil = location.hash.replace(/^#/, "");
+  var werte = {};
+  teil.split("&").forEach(function (t) { var i = t.indexOf("="); if (i > 0) werte[t.slice(0, i)] = t.slice(i + 1); });
+  if (werte.n) {
+    try { document.getElementById("gruppe").textContent = "Du wurdest in die Gruppe „" + decodeURIComponent(werte.n) + "“ eingeladen."; } catch (e) {}
+  }
+  var ziel = "obolus://beitreten?" + teil;
+  document.getElementById("oeffnen").href = ziel;
+  if (werte.g && werte.s) { setTimeout(function () { location.href = ziel; }, 300); }
+</script>
+</body>
+</html>

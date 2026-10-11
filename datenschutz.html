@@ -5,33 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Obolus – Datenschutz</title>
 <style>
-  :root { color-scheme: light dark; --grund:#f3f4fa; --karte:#fff; --tinte:#141833; --leise:#5b6180; --akzent:#3446c2; }
-  @media (prefers-color-scheme: dark) { :root { --grund:#0b0d1a; --karte:#161a2e; --tinte:#e9ebf7; --leise:#9ea4c4; --akzent:#9aa8ff; } }
+  :root { color-scheme: light dark; --grund:#f3f4fa; --karte:#fff; --tinte:#141833; --leise:#5b6180; --akzent:#3446c2; --flaeche:#3446c2; }
+  @media (prefers-color-scheme: dark) { :root { --grund:#0b0d1a; --karte:#161a2e; --tinte:#e9ebf7; --leise:#9ea4c4; --akzent:#9aa8ff; --flaeche:#4255d6; } }
   body { margin:0; background:var(--grund); color:var(--tinte); font:17px/1.55 -apple-system, system-ui, sans-serif; }
   main { max-width:680px; margin:0 auto; padding:32px 20px 64px; }
   h1 { font-size:30px; margin:0 0 6px; } h2 { font-size:20px; margin:0 0 6px; }
   section { background:var(--karte); border-radius:14px; padding:18px 20px; margin:14px 0; }
   a { color:var(--akzent); } .leise { color:var(--leise); }
+  .knopf { display:block; text-align:center; text-decoration:none; font-weight:600; padding:15px; border-radius:14px; margin:10px 0; }
+  .haupt { background:var(--flaeche); color:#fff; } .neben { background:var(--karte); color:var(--akzent); }
 </style>
 </head>
 <body>
 <main>
   <h1>Datenschutz</h1>
-<p class="leise">Obolus · Stand 3. Oktober 2026 · <a href="index.html">Hilfe</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="impressum.html">Impressum</a></p>
+<p class="leise">Obolus · Stand 11. Oktober 2026 · <a href="index.html">Hilfe</a> · <a href="datenschutz.html">Datenschutz (iPhone)</a> · <a href="datenschutz-android.html">Datenschutz (Android)</a> · <a href="impressum.html">Impressum</a></p>
+  <p class="leise">Diese Erklärung gilt für Obolus für iPhone und iPad. Beide Fassungen teilen sich geteilte Gruppen über denselben Server.</p>
   <section><h2>Kurz gesagt</h2>
-  <p>Obolus hat kein Konto, keine Werbung und keine Analyse. Der Anbieter betreibt keinen Server und sieht deine Gruppen, Ausgaben und Zahlungsdaten nicht.</p></section>
-  <section><h2>Auf deinem Gerät und in deiner iCloud</h2>
-  <p>Gruppen, Ausgaben, Belegfotos und Einstellungen liegen auf deinem Gerät. Bist du bei iCloud angemeldet, werden sie in deinem privaten iCloud-Speicher (Apple CloudKit) abgeglichen, damit sie auf deinen Geräten gleich sind. Das wickelt Apple ab; es gelten Apples Datenschutzbestimmungen.</p></section>
+  <p>Obolus hat kein Konto, keine Werbung und keine Analyse. Solange du keine Gruppe teilst, bleibt alles auf deinem Gerät. Teilst du eine Gruppe, liegt sie auf einem Server in Frankfurt (Google Firebase), damit alle Mitglieder – mit iPhone oder Android – dieselben Ausgaben sehen. Der Anbieter wertet diese Daten nicht aus.</p></section>
+  <section><h2>Auf deinem Gerät</h2>
+  <p>Gruppen, Ausgaben, Belegfotos und Einstellungen liegen auf deinem Gerät. Sie sind Teil der Gerätesicherung, die du über dein Apple-Konto eingerichtet hast (iCloud-Backup); das wickelt Apple nach seinen Datenschutzbestimmungen ab.</p></section>
   <section><h2>Geteilte Gruppen</h2>
-  <p>Teilst du eine Gruppe per Link, sehen alle, die den Link annehmen, deren Inhalt: Namen der Mitglieder, Ausgaben, Notizen, Belegfotos und hinterlegte Zahlungsdaten (IBAN, PayPal-Name). Teile den Link nur mit Menschen, die dazugehören. Du kannst die Freigabe jederzeit beenden.</p></section>
+  <p>Erstellst du einen Einladungslink oder trittst du einer Gruppe bei, speichert Obolus die Gruppe bei Google Firebase (Cloud Firestore, Rechenzentrum Frankfurt am Main; Google Ireland Limited als Auftragsverarbeiter): Namen der Mitglieder, Ausgaben, Notizen, Belegfotos, hinterlegte Zahlungsdaten (IBAN, Kontoinhaber, PayPal-Name) und den Verlauf. Für den Zugang meldet sich dein Gerät ohne Namen und E-Mail an (Firebase Authentication, anonym); dabei entstehen eine zufällige Kennung und, wie bei jeder Verbindung, Verbindungsdaten wie deine IP-Adresse. Lesen kann eine Gruppe nur, wer den Link hat und beigetreten ist – der Schlüssel im Link erreicht nie einen Server. Teile den Link nur mit Menschen, die dazugehören. Löschst du eine Gruppe, die du angelegt hast, wird sie auch auf dem Server gelöscht; trittst du aus, wird deine Mitgliedschaft entfernt. Rechtsgrundlage ist die von dir gewünschte Funktion (Art. 6 Abs. 1 lit. b DSGVO). Google kann Daten in die USA übermitteln; Google ist nach dem EU-US Data Privacy Framework zertifiziert. Solange du keine Gruppe teilst, verbindet sich Obolus nicht mit Firebase.</p></section>
   <section><h2>Wechselkurse</h2>
   <p>Für Tageskurse ruft Obolus höchstens zweimal am Tag die öffentliche Kursliste der Europäischen Zentralbank (ecb.europa.eu) ab. Dabei sieht die EZB wie bei jedem Webseitenaufruf deine IP-Adresse; es werden keine weiteren Daten gesendet.</p></section>
-  <section><h2>Kamera, Fotos, Kontakte</h2>
-  <p>Kamera und Fotomediathek nutzt Obolus nur, wenn du selbst einen Bon scannst oder ein Belegfoto anhängst. Die Texterkennung läuft auf dem Gerät. Kontakte wählst du über die Systemauswahl; Obolus liest nur den gewählten Namen.</p></section>
-  <section><h2>Käufe und Kontakt</h2>
-  <p>Käufe wickelt Apple ab; der Anbieter erhält keine persönlichen Daten. Schreibst du über „Fehler melden“, erhält der Anbieter deine Mailadresse und die sichtbaren technischen Angaben (App-Version, iOS-Version, Gerätemodell).</p></section>
-  <section><h2>Verantwortlich</h2>
-  <p>Johann Brockstedt, Burkamp 1, 24220 Flintbek, Deutschland · <a href="mailto:apple@brockdesign.de">apple@brockdesign.de</a></p></section>
+  <section><h2>Kamera, Fotos, Käufe und Kontakt</h2>
+  <p>Kamera und Fotomediathek nutzt Obolus nur, wenn du selbst einen Bon scannst oder ein Belegfoto anhängst. Die Texterkennung läuft auf dem Gerät. Kontakte wählst du über die Systemauswahl; Obolus liest nur den gewählten Namen. Mitteilungen über neue Ausgaben in geteilten Gruppen erzeugt die App selbst auf dem Gerät. Käufe wickelt Apple ab; der Anbieter erhält keine persönlichen Daten. Schreibst du über „Fehler melden“, erhält der Anbieter deine Mailadresse und die sichtbaren technischen Angaben. Verantwortlich: Johann Brockstedt, Burkamp 1, 24220 Flintbek, apple@brockdesign.de.</p></section>
+  <section><h2>Hinweis auf neue Versionen</h2>
+  <p>Um dir zu zeigen, dass im App Store eine neuere Version von Obolus bereitsteht, fragt die App höchstens alle sechs Stunden bei Apple die aktuelle Versionsnummer ab (itunes.apple.com). Übermittelt werden nur die Kennung der App und das Land deiner Regionseinstellung; wie bei jeder Internetverbindung erhält Apple dabei deine IP-Adresse. Wir selbst erhalten keine Daten.</p></section>
+  <section><h2>Deine Rechte</h2>
+  <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch sowie auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde. Daten auf dem Gerät löschst du, indem du Gruppen löschst oder die App entfernst; geteilte Gruppen, indem du sie löschst oder austrittst. Für alles andere genügt eine Mail an apple@brockdesign.de.</p></section>
+
 </main>
 </body>
 </html>
